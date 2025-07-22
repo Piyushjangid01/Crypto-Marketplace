@@ -14,7 +14,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 echo "Building Docker image"
-                sh 'docker build -t Crypto-Marketplace .'
+                sh 'docker build -t crypto-marketplace .'
             }
         }
 
@@ -22,8 +22,8 @@ pipeline {
             steps {
                 echo "Logging into DockerHub and pushing image"
                 sh 'docker login -u piyushj01 -p Piyush@0001'
-                sh 'docker tag Crypto-Marketplace piyushj01/Crypto-Marketplace'
-                sh 'docker push piyushj01/Crypto-Marketplace'
+                sh 'docker tag crypto-marketplace piyushj01/crypto-marketplace'
+                sh 'docker push piyushj01/crypto-marketplace'
             }
         }
     }
